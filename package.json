@@ -1,6 +1,6 @@
 {
   "name": "merge-geojson-features",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Merges GeoJSON Features and FeatureCollections",
   "bin": "index.js",
   "author": "Seth Fitzsimmons <seth@mojodna.net>",
