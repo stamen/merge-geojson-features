@@ -21,6 +21,20 @@ var features = process.argv.slice(2).map(function(filename) {
   return a.concat(b);
 });
 
+var seen = [];
+
+features = features.filter(function(x) {
+  if (x.id) {
+    if (seen.indexOf(x.id) >= 0) {
+      return false;
+    }
+
+    seen.push(x.id);
+  }
+
+  return true;
+});
+
 var collection = {
   type: "FeatureCollection",
   features: features
