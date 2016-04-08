@@ -2,10 +2,11 @@
 
 "use strict";
 
-var path = require("path");
+var fs = require("fs"),
+    path = require("path");
 
 var features = process.argv.slice(2).map(function(filename) {
-  var data = require(path.join(process.cwd(), filename));
+  var data = JSON.parse(fs.readFileSync(path.resolve(filename), "utf8"));
 
   switch (data.type) {
   case "FeatureCollection":
